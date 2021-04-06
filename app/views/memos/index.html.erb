@@ -1,0 +1,12 @@
+<h1>メモ一覧</h1>
+
+<ul>
+  <% @memos.each do |memo| %>
+    <%= link_to memo do %>
+      <li><%= memo.title.blank? ? 'タイトルなし' : memo.title %>: <%= memo.content %></li>
+    <% end %>
+  <% end %>
+</ul>
+
+<%= link_to('新規作成', new_memo_path) %>
+<%= link_to('戻る', :back) %>

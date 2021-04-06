@@ -1,0 +1,7 @@
+<h1>メモ閲覧</h1>
+
+<h2><%= @memo.title.blank? ? 'タイトルなし' : memo.title %></h2>
+
+<pre><%= @memo.content %></pre>
+
+<%= link_to('戻る', :back) %>

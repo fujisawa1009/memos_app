@@ -1,0 +1,11 @@
+ja:
+  activerecord:
+    models:
+      # モデル名: モデルの日本語表記
+      memo: メモ
+    attributes:
+      # モデル名
+      memo:
+        # カラム名: カラムの日本語表記
+        content: メモ内容
+        title: タイトル

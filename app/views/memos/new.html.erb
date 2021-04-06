@@ -1,0 +1,30 @@
+<h1>メモ作成</h1>
+
+<%# エラーがあったら表示する %>
+<% if @memo.errors.any? %>
+  <ul>
+    <% @memo.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%# modelにはコントローラで作った空のメモを指定する %>
+<%= form_with(model: @memo, local: true) do |form| %>
+  <div class="field">
+    <%# タイトルを入力するテキストフィールド(labelはその説明) %>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+  <div class="field">
+    <%# メモ内容を入力するテキストエリア(labelはその説明) %>
+    <%= form.label :content %><br>
+    <%= form.text_area :content %>
+  </div>
+  <div class="actions">
+    <%# 送信ボタン %>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to('戻る', :back) %>
